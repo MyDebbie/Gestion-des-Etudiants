@@ -5,11 +5,130 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link rel="icon" href="icon.svg" type="image/svg" sizes="192x192"/>
+    <style type="text/css">
+        .auto-style7 {
+            height: 22px;
+            width: 399px;
+        }
+        .auto-style8 {
+            width: 399px;
+        }
+        .auto-style9 {
+            height: 22px;
+            width: 19px;
+        }
+        .auto-style10 {
+            width: 19px;
+        }
+        .auto-style6{
+            width: 19px;
+        }
+        #btnAdd{
+            position: absolute;
+            width: 172px;
+            height: 50px;
+            left: 20px;
+            top: 190px;
+
+            background: #034C8C;
+            border-radius: 30px;
+        }
+        #btnDelete{
+           position: absolute;
+            width: 172px;
+            height: 50px;
+            left: 20px;
+            top: 401px;
+
+            background: #034C8C;
+            border-radius: 30px;
+        }
+        #btnModify{
+            position: absolute;
+            width: 172px;
+            height: 50px;
+            left: 20px;
+            top: 573px;
+
+            background: #034C8C;
+            border-radius: 30px;
+        }
+        #lbstudent{
+            position: absolute;
+            width: 693px;
+            height: 174px;
+            left: 247px;
+            top: 115px;
+
+            background: #D9A38F;
+            border-radius: 24px;
+
+            
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            letter-spacing: 0.05em;
+
+            color: #1E1E1E;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+         
+ 
+         <table style="width:100%;">
+             <tr>
+                 <td class="auto-style7">
+                     <asp:Button ID="btnAdd" runat="server" Text="Add" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
+                 </td>
+                 <td class="auto-style9">
+                     <asp:Label ID="lbstudent" runat="server" Text="Student List" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+                 </td>
+                 <td class="auto-style6" rowspan="3">
+                     <div class="input-group">
+                          <div class="form-outline">
+                            <input id="search-input" type="search" id="form1" class="form-control" />
+                            <label class="form-label" for="form1">Search</label>
+                          </div>
+                          <button id="search-button" type="button" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                  </td>
+             </tr>
+             <tr>
+                 <td class="auto-style8">
+                     <asp:Button ID="btnDelete" runat="server" Text="Delete" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
+                 </td>
+                 <td class="auto-style10" rowspan="2">
+                      <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="654px">
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                        <EditRowStyle BackColor="#999999" />
+                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                    </asp:GridView>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="auto-style8">
+                     <asp:Button ID="btnModify" runat="server" Text="Modify" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" Height="44px" BorderStyle="None" />
+                 </td>
+             </tr>
+         </table>
+         
     </form>
-</body>
+    </body>
 </html>
