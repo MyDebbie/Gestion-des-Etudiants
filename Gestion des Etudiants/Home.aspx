@@ -24,8 +24,9 @@
         .auto-style10 {
             width: 19px;
         }
-        .auto-style6{
+        .auto-style11{
             width: 19px;
+            
         }
         #btnAdd{
             position: absolute;
@@ -76,6 +77,53 @@
 
             color: #1E1E1E;
         }
+        form {
+          color: #555;
+          display: flex;
+          border: 1px solid currentColor;
+          border-radius: 30px;
+            width: 250px;
+            height: 43px;
+            right: 960px;
+            top: 54px;
+        }
+        input[type="search"] {
+          border: none;
+          background: transparent;
+          margin: 0;
+          padding: 7px 8px;
+          font-size: 14px;
+          color: inherit;
+          border: 1px solid transparent;
+          border-radius: inherit;
+        }
+
+        input[type="search"]::placeholder {
+          color: #bbb;
+        }
+        button[type="submit"] {
+          text-indent: -999px;
+          overflow: hidden;
+          width: 40px;
+          padding: 0px;
+          margin-top: 0;
+          border: 1px solid transparent;
+          border-radius: inherit;
+          background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+          cursor: pointer;
+          opacity: 0.7;
+        }
+
+        button[type="submit"]:hover {
+          opacity: 1;
+        }
+        button[type="submit"]:focus,
+        input[type="search"]:focus {
+          box-shadow: 0 0 3px 0 #1183d6;
+          border-color: #1183d6;
+          outline: none;
+        }
+       
     </style>
 </head>
 <body>
@@ -90,16 +138,11 @@
                  <td class="auto-style9">
                      <asp:Label ID="lbstudent" runat="server" Text="Student List" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
                  </td>
-                 <td class="auto-style6" rowspan="3">
-                     <div class="input-group">
-                          <div class="form-outline">
-                            <input id="search-input" type="search" id="form1" class="form-control" />
-                            <label class="form-label" for="form1">Search</label>
-                          </div>
-                          <button id="search-button" type="button" class="btn btn-primary">
-                            <i class="fas fa-search"></i>
-                          </button>
-                        </div>
+                 <td class="auto-style11" rowspan="3">
+                        <form>
+                          <input type="search" placeholder="Search..."/>
+                          <button type="submit">Search</button>
+                        </form>
                   </td>
              </tr>
              <tr>
