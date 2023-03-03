@@ -169,7 +169,7 @@
                  </td>
 
                  <td class="auto-style10" rowspan="2">
-                      <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="654px" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+                      <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="891px" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="gvStudent_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                           <Columns>
                               <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
