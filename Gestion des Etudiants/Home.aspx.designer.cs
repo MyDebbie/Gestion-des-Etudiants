@@ -33,6 +33,33 @@ namespace Gestion_des_Etudiants
         protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
+        /// ModalPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ModalPanel;
+
+        /// <summary>
+        /// OKButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button OKButton;
+
+        /// <summary>
+        /// asm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager asm;
+
+        /// <summary>
         /// lbstudent control.
         /// </summary>
         /// <remarks>
