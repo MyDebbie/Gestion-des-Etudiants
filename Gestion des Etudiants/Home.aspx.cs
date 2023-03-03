@@ -43,5 +43,10 @@ namespace Gestion_des_Etudiants
         {
 
         }
+
+        protected void gvStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
