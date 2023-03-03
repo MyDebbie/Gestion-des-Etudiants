@@ -124,6 +124,10 @@
           outline: none;
         }
        
+        .auto-style12 {
+            bottom: 364px;
+        }
+       
     </style>
 </head>
 <body>
@@ -133,7 +137,7 @@
          <table style="width:100%;">
              <tr>
                  <td class="auto-style7">
-                     <asp:Button ID="btnAdd" runat="server" Text="Add" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
+                     <asp:Button ID="btnAdd" runat="server" Text="Add" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" OnClick="btnAdd_Click" />
                  </td>
                  <td class="auto-style9">
                      <asp:Label ID="lbstudent" runat="server" Text="Student List" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
@@ -147,11 +151,20 @@
              </tr>
              <tr>
                  <td class="auto-style8">
-                     <asp:Button ID="btnDelete" runat="server" Text="Delete" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
+                     <asp:Button ID="btnDelete" runat="server" Text="Delete" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" CssClass="auto-style12" OnClick="btnDelete_Click" />
                  </td>
                  <td class="auto-style10" rowspan="2">
-                      <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="654px">
+                      <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="654px" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                          <Columns>
+                              <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                              <asp:BoundField DataField="Lastname" HeaderText="Lastname" SortExpression="Lastname" />
+                              <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                              <asp:BoundField DataField="Birthday" HeaderText="Birthday" SortExpression="Birthday" />
+                              <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                              <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
+                              <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                          </Columns>
                         <EditRowStyle BackColor="#999999" />
                         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -163,11 +176,13 @@
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                     </asp:GridView>
+                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbetudiantsConnectionString %>" SelectCommand="SELECT [Name], [Lastname], [Address], [Birthday], [Email], [Phone], [Date] FROM [Etudiants]"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                  </td>
              </tr>
              <tr>
                  <td class="auto-style8">
-                     <asp:Button ID="btnModify" runat="server" Text="Modify" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" Height="44px" BorderStyle="None" />
+                     <asp:Button ID="btnModify" runat="server" Text="Modify" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" Height="44px" BorderStyle="None" OnClick="btnModify_Click" />
                  </td>
              </tr>
          </table>
