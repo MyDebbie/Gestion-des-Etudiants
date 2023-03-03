@@ -1,14 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Gestion_des_Etudiants.Home" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Gestion_des_Etudiants.Home" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+ 
+
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link rel="icon" href="icon.svg" type="image/svg" sizes="192x192"/>
+    
     <style type="text/css">
         .auto-style7 {
             height: 22px;
@@ -63,7 +66,7 @@
             width: 693px;
             height: 174px;
             left: 247px;
-            top: 115px;
+            top: 35px;
 
             background: #D9A38F;
             border-radius: 24px;
@@ -77,6 +80,8 @@
 
             color: #1E1E1E;
         }
+
+
         form {
           color: #555;
           display: flex;
@@ -123,6 +128,11 @@
           border-color: #1183d6;
           outline: none;
         }
+        #ModalPanel{
+            border-radius: 5px;
+	        background-color: #e7e7e7;
+	        padding: 20px 0;
+        }
        
         .auto-style12 {
             bottom: 364px;
@@ -137,8 +147,10 @@
          <table style="width:100%;">
              <tr>
                  <td class="auto-style7">
+                 
                      <asp:Button ID="btnAdd" runat="server" Text="Add" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" OnClick="btnAdd_Click" />
                  </td>
+               
                  <td class="auto-style9">
                      <asp:Label ID="lbstudent" runat="server" Text="Student List" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
                  </td>
@@ -149,10 +161,13 @@
                         </form>
                   </td>
              </tr>
+                
              <tr>
+
                  <td class="auto-style8">
                      <asp:Button ID="btnDelete" runat="server" Text="Delete" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" CssClass="auto-style12" OnClick="btnDelete_Click" />
                  </td>
+
                  <td class="auto-style10" rowspan="2">
                       <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="654px" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />

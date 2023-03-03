@@ -1,0 +1,5 @@
+﻿Build started...
+1>------ Build started: Project: Gestion des Etudiants, Configuration: Debug Any CPU ------
+1>  Gestion des Etudiants -> C:\Users\Dashoo\Documents\gestion des etudiants\Gestion des Etudiants\bin\Gestion des Etudiants.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build started at 1:57 PM and took 22.752 seconds ==========
