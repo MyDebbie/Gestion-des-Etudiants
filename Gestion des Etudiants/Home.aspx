@@ -4,11 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+ 
+
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link rel="icon" href="icon.svg" type="image/svg" sizes="192x192"/>
+    
     <style type="text/css">
         .auto-style7 {
             height: 22px;
@@ -63,7 +66,7 @@
             width: 693px;
             height: 174px;
             left: 247px;
-            top: 115px;
+            top: 35px;
 
             background: #D9A38F;
             border-radius: 24px;
@@ -77,6 +80,8 @@
 
             color: #1E1E1E;
         }
+
+
         form {
           color: #555;
           display: flex;
@@ -123,6 +128,11 @@
           border-color: #1183d6;
           outline: none;
         }
+        #ModalPanel{
+            border-radius: 5px;
+	        background-color: #e7e7e7;
+	        padding: 20px 0;
+        }
        
     </style>
 </head>
@@ -136,14 +146,34 @@
                      
                      <asp:Button ID="btnAdd" runat="server" Text="Add" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
                     <asp:Panel ID="ModalPanel" runat="server" Width="500px">
-                         ASP.NET AJAX is a free framework for quickly creating a new generation of more 
-                         efficient, more interactive and highly-personalized Web experiences that work 
-                         across all the most popular browsers.<br />
-                         <asp:Button ID="OKButton" runat="server" Text="Close" />
+                        <asp:label for="txtfirstName" runat="server" class="form-label">Firstname</asp:label>
+                        <asp:TextBox ID="txtfirstName"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtlastName" runat="server" class="form-label">Lastname</asp:label>
+                        <asp:TextBox ID="txtlastName"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtAdresse" runat="server" class="form-label">Adresse</asp:label>
+                        <asp:TextBox ID="txtAdresse"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtBirthday" runat="server" class="form-label">Birthday</asp:label>
+                        <asp:TextBox ID="txtBirthday"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtEmail" runat="server" class="form-label">Email</asp:label>
+                        <asp:TextBox ID="txtEmail"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtPhone" runat="server" class="form-label">Phone</asp:label>
+                        <asp:TextBox ID="txtPhone"  runat="server" CssClass="form-control"></asp:TextBox>
+                       
+                         <asp:Button ID="btnSave" runat="server" Text="Save"  BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None"/>
+
+
+                         <asp:Button ID="btnCancel" runat="server" Text="Cancel"  BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
+
                         </asp:Panel>
                      <ajaxToolkit:ModalPopupExtender ID="mpe" runat="server" TargetControlId="btnAdd" 
-                            PopupControlID="ModalPanel" OkControlID="OKButton" />
+                            PopupControlID="ModalPanel" OkControlID="btnCancel" />
                      <asp:ScriptManager ID="asm" runat="server" />
+
 
 
                  </td>
@@ -164,6 +194,7 @@
                  <td class="auto-style8">
                      <asp:Button ID="btnDelete" runat="server" Text="Delete" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
                  </td>
+
                  <td class="auto-style10" rowspan="2">
                       <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="654px">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
