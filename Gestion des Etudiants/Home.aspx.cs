@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Gestion_des_Etudiants
 {
@@ -13,11 +14,11 @@ namespace Gestion_des_Etudiants
 
         Etudiants etudiants;
         List<Etudiants> etudiant = new List<Etudiants>();
-        DateTime dateTime = DateTime.Today;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            var date = dateTime.ToString("dd/MM/yyyy");
+           // var date = dateTime.ToString("dd/MM/yyyy");
             
             display();
 
@@ -27,8 +28,7 @@ namespace Gestion_des_Etudiants
         {
            
         }
-        public String consString = "Data Source=LAPTOP-688VBC74;Initial Catalog=dbetudiants;Integrated Security=True";
-
+       
         protected void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -47,6 +47,18 @@ namespace Gestion_des_Etudiants
         protected void gvStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-688VBC74;Initial Catalog=dbetudiants;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            
+            string insertData = "Insert into Etudiants(Name, LastName, Address, Birthday,Email,Phone) Values('" +txtfirstName + "','" + txtlastName + "','" + txtAdresse + "','" + txtBirthday + "','" + txtEmail + "','" + txtPhone + "')";
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(insertData,connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }

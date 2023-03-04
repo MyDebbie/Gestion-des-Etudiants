@@ -138,6 +138,32 @@
              <tr>
                  <td class="auto-style7">
                      <asp:Button ID="btnAdd" runat="server" Text="Add" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" OnClick="btnAdd_Click" />
+                        <asp:Panel ID="ModalPanel" runat="server" Width="500px">
+                        <asp:label for="txtfirstName" runat="server" class="form-label">Firstname</asp:label>
+                        <asp:TextBox ID="txtfirstName"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtlastName" runat="server" class="form-label">Lastname</asp:label>
+                        <asp:TextBox ID="txtlastName"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtAdresse" runat="server" class="form-label">Adresse</asp:label>
+                        <asp:TextBox ID="txtAdresse"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtBirthday" runat="server" class="form-label">Birthday</asp:label>
+                        <asp:TextBox ID="txtBirthday"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtEmail" runat="server" class="form-label">Email</asp:label>
+                        <asp:TextBox ID="txtEmail"  runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:label for="txtPhone" runat="server" class="form-label">Phone</asp:label>
+                        <asp:TextBox ID="txtPhone"  runat="server" CssClass="form-control"></asp:TextBox>
+                       
+                         <asp:Button ID="btnSave" runat="server" Text="Save"  BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" OnClick="btnSave_Click"/>
+                         <asp:Button ID="btnCancel" runat="server" Text="Cancel"  BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" />
+
+                        </asp:Panel>
+                     <ajaxToolkit:ModalPopupExtender ID="mpe" runat="server" TargetControlId="btnAdd" 
+                            PopupControlID="ModalPanel" OkControlID="btnCancel" />
+                     <asp:ScriptManager ID="asm" runat="server" />
                  </td>
                  <td class="auto-style9">
                      <asp:Label ID="lbstudent" runat="server" Text="Student List" Font-Bold="True" Font-Size="XX-Large"></asp:Label>

@@ -16,7 +16,7 @@ namespace Gestion_des_Etudiants
         String _ddn;
         String _email;
         String _telephone;
-        string _dateCree;
+      //  DateTime _dateCree;
 
         public Etudiants(String _nom, String _prenom1, String _adress, String _ddn, String _email, String _telephone )
         {
@@ -59,12 +59,12 @@ namespace Gestion_des_Etudiants
             get { return _telephone; }
             set { _telephone = value; }
         }
-        public string DateCree
-        {
-            get { return _dateCree; }
-            set { _dateCree = value; }
+        //public DateTime DateCree
+        //{
+        //    get { return _dateCree; }
+        //    set { _dateCree = value; }
 
-        }
+        //}
 
     }
 
