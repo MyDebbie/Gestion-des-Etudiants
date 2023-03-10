@@ -63,7 +63,6 @@ namespace Gestion_des_Etudiants
         //{
         //    get { return _dateCree; }
         //    set { _dateCree = value; }
-
         //}
 
     }

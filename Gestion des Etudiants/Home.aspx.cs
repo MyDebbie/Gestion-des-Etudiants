@@ -51,14 +51,29 @@ namespace Gestion_des_Etudiants
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=LAPTOP-688VBC74;Initial Catalog=dbetudiants;Integrated Security=True";
+            string connectionString = "Data Source=LAPTOP-688VBC74; Initial Catalog=dbetudiants;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
-            
-            string insertData = "Insert into Etudiants(Name, LastName, Address, Birthday,Email,Phone) Values('" +txtfirstName + "','" + txtlastName + "','" + txtAdresse + "','" + txtBirthday + "','" + txtEmail + "','" + txtPhone + "')";
+
             connection.Open();
-            SqlCommand cmd = new SqlCommand(insertData,connection);
+
+            SqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = "Insert or Update into Etudiants(Name, LastName, Address, Birthday, Email, Phone) Values(@Name, @LastName, @Address, @Birthday, @Email, @Phone)";
+            cmd.Parameters.AddWithValue("@Name", txtfirstName.Text);
+            cmd.Parameters.AddWithValue("@LastName", txtlastName.Text);
+            cmd.Parameters.AddWithValue("@Address", txtAdresse.Text);
+            cmd.Parameters.AddWithValue("@Birthday", txtBirthday.Text);
+            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+            cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
+
             cmd.ExecuteNonQuery();
             connection.Close();
+
+            //string insertData = "Insert into Etudiants(Name, LastName, Address, Birthday,Email,Phone) Values('" + txtfirstName + "','" + txtlastName + "','" + txtAdresse + "','" + txtBirthday + "','" + txtEmail + "','" + txtPhone + "')";
+            //connection.Open();
+            //SqlCommand cmd = new SqlCommand(insertData, connection);
+            //cmd.ExecuteNonQuery();
+            //connection.Close();
         }
     }
 }

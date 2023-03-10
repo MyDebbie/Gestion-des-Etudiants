@@ -35,7 +35,7 @@
             left: 20px;
             top: 190px;
 
-            background: #034C8C;
+            background: #166393;
             border-radius: 30px;
         }
         #btnDelete{
@@ -45,7 +45,7 @@
             left: 20px;
             top: 401px;
 
-            background: #034C8C;
+            background: #166393;
             border-radius: 30px;
         }
         #btnModify{
@@ -55,7 +55,7 @@
             left: 20px;
             top: 573px;
 
-            background: #034C8C;
+            background: #166393;
             border-radius: 30px;
         }
         #lbstudent{
@@ -77,36 +77,29 @@
 
             color: #1E1E1E;
         }
-        form {
-          color: #555;
-          display: flex;
-          border: 1px solid currentColor;
-          border-radius: 30px;
-            width: 250px;
+        #gvStudent{
+            position: absolute;
+            width: 786px;
+            height: 419px;
+            left: 227px;
+            top: 400px;
+        }
+        #search{
+            position: absolute;
+            width: 450px;
             height: 43px;
-            right: 960px;
-            top: 54px;
-        }
-        input[type="search"] {
-          border: none;
-          background: transparent;
-          margin: 0;
-          padding: 7px 8px;
-          font-size: 14px;
-          color: inherit;
-          border: 1px solid transparent;
-          border-radius: inherit;
-        }
-
-        input[type="search"]::placeholder {
-          color: #bbb;
+            left: 960px;
+            top: 115px;
+            background: #ECF0F3;
+            border-radius: 30px;
         }
         button[type="submit"] {
           text-indent: -999px;
           overflow: hidden;
           width: 40px;
           padding: 0px;
-          margin-top: 0;
+          margin-top: 125px;
+          margin-left:10px;
           border: 1px solid transparent;
           border-radius: inherit;
           background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
@@ -117,17 +110,11 @@
         button[type="submit"]:hover {
           opacity: 1;
         }
-        button[type="submit"]:focus,
-        input[type="search"]:focus {
+        button[type="submit"]:focus{
           box-shadow: 0 0 3px 0 #1183d6;
           border-color: #1183d6;
           outline: none;
         }
-       
-        .auto-style12 {
-            bottom: 364px;
-        }
-       
     </style>
 </head>
 <body>
@@ -170,7 +157,7 @@
                  </td>
                  <td class="auto-style11" rowspan="3">
                         <form>
-                          <input type="search" placeholder="Search..."/>
+                          <asp:TextBox ID="search" runat="server" type="search" placeholder="Search..."></asp:TextBox>
                           <button type="submit">Search</button>
                         </form>
                   </td>
@@ -179,7 +166,7 @@
                  <td class="auto-style8">
                      <asp:Button ID="btnDelete" runat="server" Text="Delete" BackColor="#034C8C" Font-Bold="True" Font-Size="Medium" ForeColor="White" BorderStyle="None" CssClass="auto-style12" OnClick="btnDelete_Click" />
                  </td>
-                 <td class="auto-style10" rowspan="2">
+                 <td class="auto-style11" rowspan="2">
                       <asp:GridView ID="gvStudent" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="891px" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="gvStudent_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                           <Columns>
@@ -188,21 +175,20 @@
                               <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
                               <asp:BoundField DataField="Birthday" HeaderText="Birthday" SortExpression="Birthday" />
                               <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                              <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
-                              <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                              <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" /> 
                           </Columns>
                         <EditRowStyle BackColor="#999999" />
                         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#166393" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                         <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                        <SortedAscendingHeaderStyle BackColor="#03588C" />
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                     </asp:GridView>
-                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbetudiantsConnectionString %>" SelectCommand="SELECT [Name], [Lastname], [Address], [Birthday], [Email], [Phone], [Date] FROM [Etudiants]"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbetudiantsConnectionString %>" SelectCommand="SELECT [Name], [Lastname], [Address], [Birthday], [Email], [Phone] FROM [Etudiants]"></asp:SqlDataSource>
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                  </td>
              </tr>
